@@ -8,7 +8,7 @@ use function Pest\Laravel\get;
 uses(RefreshDatabase::class);
 
 it('returns a successful response for the home page', function () {
-    get(route('home'))
+    get(route('pages.home'))
         ->assertOk();
 });
 
@@ -17,6 +17,6 @@ it('returns a successful response for the course detail page', function () {
     $course = Course::factory()->create();
 
     // Act &  Assert
-    get(route('course.details', $course))
+    get(route('pages.course.details', $course))
         ->assertOk();
 });
