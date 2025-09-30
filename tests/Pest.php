@@ -12,6 +12,7 @@
 */
 
 use App\Models\User;
+
 use function Pest\Laravel\actingAs;
 
 pest()->extend(Tests\TestCase::class)
