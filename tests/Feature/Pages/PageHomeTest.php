@@ -50,3 +50,21 @@ it('shows courses by release date', function () {
             $oldCourse->title,
         ]);
 });
+
+it('includes login if not logged in', function () {
+    // Act &  Assert
+    get(route('pages.home'))
+        ->assertOk()
+        ->assertSeeText('Login')
+        ->assertSee(route('login'));
+});
+
+it('includes logout if logged in', function () {
+    // Arrange
+    loginAsUser();
+    // Act &  Assert
+    get(route('pages.home'))
+        ->assertOk()
+        ->assertSeeText('Log out')
+        ->assertSee(route('logout'));
+});

@@ -8,6 +8,14 @@
     <title>Home Page</title>
 </head>
 <body>
+@guest
+    <a href="{{ route('login') }}">Login</a>
+    @else
+    <form action="{{ route('logout') }}" method="post">
+        @csrf
+        <button>Log out</button>
+    </form>
+@endguest
     @foreach($courses as $course)
         <h2>{{ $course->title }}</h2>
         <p>{{ $course->description }}</p>
