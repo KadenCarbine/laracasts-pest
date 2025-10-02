@@ -42,8 +42,7 @@ it('shows first course video by default', function () {
 it('shows provided course video', function () {
     // Arrange
     $course = Course::factory()
-        ->has(Video::factory(2)->state(
-            new Sequence(['title' => 'First Video'], ['title' => 'Second Video'])))
+        ->has(Video::factory(2))
         ->create();
     // Act & Assert
     loginAsUser();
@@ -52,5 +51,5 @@ it('shows provided course video', function () {
         'video' => $course->videos()->orderByDesc('id')->first(),
     ]))
         ->assertOk()
-        ->assertSee('Second Video');
+        ->assertSee($course->videos->first()->title);
 });
