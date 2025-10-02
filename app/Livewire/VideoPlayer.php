@@ -11,9 +11,19 @@ class VideoPlayer extends Component
 
     public $courseVideos;
 
-    public function mount()
+    public function mount(): void
     {
         $this->courseVideos = $this->video->course->videos;
+    }
+
+    public function markVideoAsCompleted(): void
+    {
+        auth()->user()->videos()->attach($this->video);
+    }
+
+    public function markVideoAsNotCompleted(): void
+    {
+        auth()->user()->videos()->detach($this->video);
     }
 
     public function render(): View
