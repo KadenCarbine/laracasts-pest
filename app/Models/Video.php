@@ -20,4 +20,9 @@ class Video extends Model
     {
         return Str::of($this->duration_in_minutes)->append(' minutes');
     }
+
+    public function alreadyWatched(): bool
+    {
+        return auth()->user()->watchedVideos()->where('video_id', $this->id)->exists();
+    }
 }
