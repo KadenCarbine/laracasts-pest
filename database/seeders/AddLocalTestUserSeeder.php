@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
@@ -11,10 +12,12 @@ class AddLocalTestUserSeeder extends Seeder
     public function run(): void
     {
         if (App::environment() === 'local') {
-            User::firstOrCreate(['email' => 'test@example.com'],
+            $user = User::firstOrCreate(['email' => 'test@example.com'],
                 ['name' => 'Test User',
-                'password' => bcrypt('password'),
-            ]);
+                    'password' => bcrypt('password'),
+                ]);
+            $courses = Course::all();
+            $user->purchasedCourses()->attach($courses);
         }
     }
 }

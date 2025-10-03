@@ -17,7 +17,6 @@ it('adds given courses', function () {
     $this->assertDatabaseHas(Course::class, ['title' => 'TDD The Laravel Way']);
 });
 
-
 it('adds given courses only once', function () {
     // Arrange
     $this->assertDatabaseCount(Course::class, 0);

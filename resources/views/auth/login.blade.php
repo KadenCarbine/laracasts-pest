@@ -11,7 +11,9 @@
                 {{ $value }}
             </div>
         @endsession
-
+        @env('local')
+            <x-login-link email="test@example.com" redirect-url="{{ route('pages.dashboard') }}" />
+        @endenv
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

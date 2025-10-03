@@ -3,7 +3,6 @@
 use App\Livewire\VideoPlayer;
 use App\Models\Course;
 use App\Models\Video;
-use Illuminate\Database\Eloquent\Factories\Sequence;
 
 use function Pest\Laravel\get;
 

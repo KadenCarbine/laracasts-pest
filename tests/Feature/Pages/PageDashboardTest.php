@@ -2,7 +2,6 @@
 
 use App\Models\Course;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Support\Carbon;
 
 use function Pest\Laravel\get;

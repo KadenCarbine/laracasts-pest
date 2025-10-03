@@ -2,7 +2,6 @@
 
 use App\Livewire\VideoPlayer;
 use App\Models\Course;
-use App\Models\User;
 use App\Models\Video;
 
 beforeEach(function () {
@@ -47,8 +46,8 @@ it('shows list of all course videos', function () {
     // Act & Assert
     Livewire::test(VideoPlayer::class, ['video' => $course->videos()->first()])
         ->assertSee([...$course->videos->pluck('title')->toArray()])->assertSeeHtml([
-            route('pages.course-videos', $course->videos[1]),
-            route('pages.course-videos', $course->videos[2]),
+            route('pages.course-videos', ['course' => $course, 'video' => $course->videos[1]]),
+            route('pages.course-videos', ['course' => $course, 'video' => $course->videos[2]]),
         ]);
 });
 
