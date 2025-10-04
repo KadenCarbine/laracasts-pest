@@ -48,6 +48,6 @@ it('includes paddle checkout button', function () {
     get(route('pages.course.details', $course))
         ->assertOk()
         ->assertSee('<script src="https://cdn.paddle.com/paddle/paddle.js"></script>', false)
-        ->assertSee('Paddle.Setup({ vendor: 1234567 });', false)
+        ->assertSee('Paddle.Setup({ vendor: 4576 });', false)
         ->assertSee('<a href="#!" class="paddle_button" data-product="product-id">Buy Now!</a>', false);
 });
