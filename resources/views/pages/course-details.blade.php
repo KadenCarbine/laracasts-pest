@@ -12,5 +12,8 @@
 <a href="#!" class="paddle_button" data-product="{{ $course->paddle_product_id }}">Buy Now!</a>
 <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
 <script type="text/javascript">
-    Paddle.Setup({ vendor: 1234567 });
+    @env('local')
+    Paddle.Environment.set("sandbox")
+    @endenv
+    Paddle.Setup({ vendor: 4576 });
 </script>
