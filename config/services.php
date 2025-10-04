@@ -35,4 +35,7 @@ return [
         ],
     ],
 
+    'paddle' => [
+        'public-key' => env('PADDLE_PUBLIC_KEY'),
+    ]
 ];
