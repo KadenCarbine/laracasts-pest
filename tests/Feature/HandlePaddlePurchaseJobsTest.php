@@ -70,7 +70,7 @@ it('stores paddle purchase for given user', function () {
 it('sends out purchase email', function () {
     // Arrange
     Mail::fake();
-
+    Course::factory()->create(['paddle_product_id' => '34779']);
     // Act & Assert
     (new HandlePaddlePurchaseJob($this->webhookCall))->handle();
 

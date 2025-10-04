@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Services\Twitter;
 
 use Illuminate\Support\Facades\Facade;
 use Tests\Fakes\TwitterFake;

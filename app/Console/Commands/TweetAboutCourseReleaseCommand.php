@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Course;
+use App\Services\Twitter\TwitterFacade;
 use Illuminate\Console\Command;
-use Twitter;
 class TweetAboutCourseReleaseCommand extends Command
 {
     protected $signature = 'tweet:about-course-release {courseId}';
@@ -15,6 +15,6 @@ class TweetAboutCourseReleaseCommand extends Command
     {
         $course = Course::findOrFail($this->argument('courseId'));
 
-        Twitter::tweet("I just released $course->title, Check it out!" . route('pages.course.details', $course));
+        TwitterFacade::tweet("I just released $course->title, Check it out!" . route('pages.course.details', $course));
     }
 }

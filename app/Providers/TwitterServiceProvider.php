@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\TwitterClient;
+use App\Services\Twitter\TwitterClient;
 use Illuminate\Support\ServiceProvider;
 
 class TwitterServiceProvider extends ServiceProvider

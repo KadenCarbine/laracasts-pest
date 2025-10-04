@@ -1,6 +1,6 @@
 <?php
 
-use App\TwitterFacade;
+use App\Services\Twitter\TwitterFacade;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -126,7 +126,8 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'aliases' => [
-        'Twitter' => TwitterFacade::class,
-    ],
+//    'aliases' => [
+//        'Auth' => Illuminate\Support\Facades\Auth::class,
+//        'Twitter' => TwitterFacade::class,
+//    ],
 ];
